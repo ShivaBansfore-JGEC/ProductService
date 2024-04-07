@@ -22,7 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     reviewId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true
+      unique: true,
+      primaryKey: true,
+      autoIncrement: true
     },
     productId: {
       type: DataTypes.INTEGER,
