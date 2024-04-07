@@ -5,10 +5,12 @@ const router = express.Router();
 const { ReviewMiddleWare } = require("../../middlewares/index");
 const { ReviewController } = require("../../controller/index");
 
-router.get('/review', ReviewController.getAllReviews);
-router.get('/review/:id', ReviewController.getReviews);
-router.post('/review', ReviewMiddleWare.validateReview);
-router.patch('/review/:id', ReviewController.updateReviews);
-router.delete('/review/:id', ReviewController.deleteReviews);
+const reviewController = new ReviewController();
+
+router.get('/review', reviewController.getAllReviews);
+router.get('/review/:id', reviewController.getReviews);
+router.post('/review', ReviewMiddleWare.validateReview, reviewController.createReviews);
+router.patch('/review/:id', reviewController.updateReviews);
+router.delete('/review/:id', reviewController.deleteReviews);
 
 module.exports = router;

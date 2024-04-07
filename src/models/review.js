@@ -21,11 +21,13 @@ module.exports = (sequelize, DataTypes) => {
   Review.init({
     reviewId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      unique: true
     },
     productId: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: false,
+      unique: true
     },
     content: {
       type: DataTypes.STRING,
