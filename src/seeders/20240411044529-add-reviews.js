@@ -15,7 +15,7 @@ module.exports = {
       },
       {
         reviewId: 2,
-        productId: 1,
+        productId: 3,
         content: "This shirt is really nice!",
         rating: 4,
         reviewerName: "Manish Sharma",
@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         reviewId: 3,
-        productId: 1,
+        productId: 2,
         content: "The overall look of this shirt is really nice",
         rating: 4.8,
         reviewerName: "Ankit agarwal",

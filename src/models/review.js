@@ -24,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: true,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      unique: true
     },
     productId: {
       type: DataTypes.INTEGER,

@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      unique: true
     },
     name: {
       type: DataTypes.STRING,
@@ -32,7 +33,9 @@ module.exports = (sequelize, DataTypes) => {
     discount: DataTypes.FLOAT,
     discountType: DataTypes.STRING,
     imageUrl: DataTypes.STRING,
-    rating: DataTypes.FLOAT
+    rating: DataTypes.FLOAT,
+    brand: DataTypes.STRING,
+    category: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Product',

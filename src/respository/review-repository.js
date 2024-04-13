@@ -1,5 +1,6 @@
 
 const { Review } = require("../models/index");
+const { ValidationError, RepositoryError } = require("../utils/errors/index");
 
 
 class ReviewRepository {
@@ -43,8 +44,16 @@ class ReviewRepository {
                     reviewId: id
                 }
             });
+            const totalUpdated = results[0];
+            if (!totalUpdated) throw new ValidationError("Validation Error", "Something went wrong", "Something went wrong");
+            // else
             return results;
+
         } catch (error) {
+            if (error.name === "SequelizeValidationError") {
+                throw new ValidationError("Repository error", error);
+            }
+            console.log("hello:", error)
             throw (error);
         }
     }

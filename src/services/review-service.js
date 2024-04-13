@@ -1,5 +1,6 @@
 
 const ReviewRepository = require("../respository/review-repository");
+const { ServiceError } = require("../utils/errors/index");
 class ReviewService {
     constructor() {
         this.reviewRepository = new ReviewRepository();
@@ -19,7 +20,7 @@ class ReviewService {
             const response = await this.reviewRepository.getReviews(reviewId);
             return response;
         } catch (error) {
-            throw (error);
+            throw error;
         }
     }
 

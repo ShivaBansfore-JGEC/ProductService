@@ -86,12 +86,14 @@ class ReviewController {
             })
 
         } catch (error) {
-            return res.status(500).json({
+            console.log({ error })
+            return res.status(error.statusCode).json({
                 error: {
-                    message: "something went wrong!"
+                    message: error.message,
+                    explaination: error.explaination
                 },
                 success: false,
-                status_code: 500
+                status_code: error.statusCode
             })
         }
     }
